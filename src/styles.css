@@ -1,0 +1,58 @@
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root{
+  --bg: #0D0D0D;
+  --surface-1: #1F1F1F;
+  --surface-2: #2A2A2A;
+  --text: #F5F5F5;
+  --muted: #9CA3AF;
+  --primary: #E91E63;
+  --primary-hover: #D81B60;
+  --primary-dark: #C2185B;
+  --secondary: #00BFFF;
+  --success: #10B981;
+  --warning: #F59E0B;
+  --border: #2A2A2A;
+  --glass: rgba(255,255,255,0.03);
+}
+
+@layer base {
+  body { background-color: var(--bg); color: var(--text); font-family: Inter, ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial; }
+  h1,h2,h3{ color: var(--text) }
+  a{ color: var(--primary) }
+}
+
+.card{ background: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01)); border:1px solid var(--border); }
+
+.hero-gradient{ background: linear-gradient(180deg, var(--surface-1) 0%, rgba(31,31,31,0.95) 40%, rgba(42,42,42,0.9) 100%); }
+
+.brand-gradient{ background: linear-gradient(90deg, var(--primary), var(--secondary)); }
+
+.glass-card{ background: rgba(255,255,255,0.02); border: 1px solid rgba(255,255,255,0.03); backdrop-filter: blur(6px); }
+
+.float-dashboard{ box-shadow: 0 20px 40px rgba(0,0,0,0.6); border-radius: 16px; overflow: hidden }
+
+.muted { color: var(--muted) }
+
+/* Marquee animations for testimonials */
+.marquee{display:flex; align-items:center}
+.marquee-left{animation:marquee-left 40s linear infinite}
+.marquee-right{animation:marquee-right 40s linear infinite}
+
+@keyframes marquee-left{
+  0%{transform:translateX(0%)}
+  100%{transform:translateX(-50%)}
+}
+
+@keyframes marquee-right{
+  0%{transform:translateX(-50%)}
+  100%{transform:translateX(0%)}
+}
+
+.testimonial-card{min-width:20rem; max-width:26rem}
+.marquee .testimonial-card{margin-right:24px}
+
+
