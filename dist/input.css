@@ -14,6 +14,30 @@
 	--neutral-500: #6B7280;
 }
 
+/* Dark theme overrides */
+:root.dark {
+	--bg: #0B1220; /* near black-blue */
+	--surface: #0F1724; /* slightly lighter */
+	--text: #E6EEF8; /* light text */
+	--muted: #9CA3AF; /* muted text */
+	--trauck: #6B57FF; /* brighter primary on dark */
+	--secondary: #33D6A0;
+}
+
+/* Utility helpers */
+.bg-app {
+	background-color: var(--bg);
+}
+.surface {
+	background-color: var(--surface);
+}
+.text-main {
+	color: var(--text);
+}
+.text-muted {
+	color: var(--muted);
+}
+
 .active-burger > span:nth-child(1) {
 	@apply rotate-45 origin-top-left transition-all duration-300 -translate-y-0.5;
 }

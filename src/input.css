@@ -14,6 +14,55 @@
 	--neutral-500: #6B7280;
 }
 
+/* Dark theme overrides */
+:root.dark {
+	--bg: #0B1220; /* near black-blue */
+	--surface: #0F1724; /* slightly lighter */
+	--text: #F1F7FB; /* brighter light text for better contrast */
+	--muted: #B6C4D6; /* slightly lighter muted text */
+	--trauck: #6B57FF; /* brighter primary on dark */
+	--secondary: #33D6A0;
+}
+
+/* Utility helpers */
+.bg-app {
+	background-color: var(--bg);
+}
+.surface {
+	background-color: var(--surface);
+}
+.text-main {
+	color: var(--text);
+}
+.text-muted {
+	color: var(--muted);
+}
+
+/* Improve readability on dark mode: override some hard-coded Tailwind hex utilities
+   that are used throughout the template (e.g. text-[#36485C], text-[#5F7896])
+   and background utilities for light sections so they are legible on dark bg. */
+body.dark [class*="text-[#36485C]"],
+body.dark [class*="text-[#5F7896]"],
+body.dark [class*="text-[#9CA3AF]"] {
+	color: var(--text) !important;
+}
+
+/* Make cards and white backgrounds use the surface color in dark mode */
+body.dark [class*="bg-[#F4F8FA]"],
+body.dark [class*="bg-[#F5F4FF]"],
+body.dark [class*="bg-[#E3F1FF]"] {
+	background-color: var(--surface) !important;
+	color: var(--text) !important;
+}
+
+/* Cards and explicit white backgrounds should also use surface so text is readable */
+body.dark .card,
+body.dark [class*="bg-white"] {
+	background-color: var(--surface) !important;
+	color: var(--text) !important;
+	box-shadow: none !important;
+}
+
 .active-burger > span:nth-child(1) {
 	@apply rotate-45 origin-top-left transition-all duration-300 -translate-y-0.5;
 }
