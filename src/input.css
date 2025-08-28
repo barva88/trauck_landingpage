@@ -6,6 +6,14 @@
 	font-family: "Inter", sans-serif;
 }
 
+/* TRAUCK palette variables */
+:root {
+	--trauck: #4328EB;
+	--trauck-500: #4328EB;
+	--secondary: #00B67F;
+	--neutral-500: #6B7280;
+}
+
 .active-burger > span:nth-child(1) {
 	@apply rotate-45 origin-top-left transition-all duration-300 -translate-y-0.5;
 }
